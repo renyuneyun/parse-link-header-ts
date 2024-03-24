@@ -9,7 +9,7 @@ interface Link extends RawLink {
   rel: string;
 }
 
-export type Result = Record<string, Link | undefined>;
+export type Result = Record<string, Link[]>;
 
 function hasRel(link: null | Record<string, string>): link is Link {
   if (link === null) {
@@ -21,7 +21,10 @@ function hasRel(link: null | Record<string, string>): link is Link {
 
 function intoRels(acc: Result, link: Link) {
   function splitRel(rel: string) {
-    acc[rel] = { ...link, ...{ rel } };
+    if (!(rel in acc)) {
+      acc[rel] = [];
+    }
+    acc[rel].push({ ...link, ...{ rel } });
   }
 
   link.rel.split(/\s+/).forEach(splitRel);
