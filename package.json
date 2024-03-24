@@ -1,7 +1,7 @@
 {
   "name": "@renyuneyun/parse-link-header-ts",
-  "version": "1.0.1",
-  "description": "Parses a link header and returns paging information for each contained link.",
+  "version": "2.0.0",
+  "description": "Parses a link header and returns information for each contained link.",
   "homepage": "https://github.com/renyuneyun/parse-link-header-ts",
   "bugs": "https://github.com/renyuneyun/parse-link-header-ts/issues",
   "repository": {
@@ -43,7 +43,7 @@
     "rel"
   ],
   "author": {
-    "name": "Sota Sugiura"
+    "name": "Rui Zhao (renyuneyun)"
   },
   "license": "MIT",
   "lint-staged": {
